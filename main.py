@@ -23,11 +23,14 @@ class Client(commands.Bot):
         await self.load_extension("commands.ask_davinci_command")
         await self.load_extension("commands.ask_curie_command")
         await self.load_extension("commands.ask_ada_command")
+        await self.load_extension("commands.help_command")
 
         await self.tree.sync(guild=None)
 
     async def on_ready(self):
-        await self.change_presence(status=discord.Status.idle)
+        await self.change_presence(activity=discord.Game(name="https://github.com/PLATINA-DS/OpenAi-discord-bot"),
+                                   status=discord.Status.idle)
+
         print("connected")
 
 
