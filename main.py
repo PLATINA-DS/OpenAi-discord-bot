@@ -19,11 +19,9 @@ class Client(commands.Bot):
         )
 
     async def setup_hook(self):
-        await self.load_extension("commands.ask_babbage_command")
-        await self.load_extension("commands.ask_davinci_command")
-        await self.load_extension("commands.ask_curie_command")
-        await self.load_extension("commands.ask_ada_command")
+        await self.load_extension("commands.ask_command")
         await self.load_extension("commands.help_command")
+        await self.load_extension("commands.send_example")
 
         await self.tree.sync(guild=None)
 
