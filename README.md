@@ -10,7 +10,7 @@
 ## About
 This is a Discord bot that can be used to create requests to one of the artificial intelligence models developed by OpenAI and available to everyone. This is not an official OpenAI bot; it simply adds AI interaction to the Discord interface. Using a bot like this can add a new level of interactivity and engagement to a Discord server, especially for communities interested in artificial intelligence and machine learning. With the ability to make requests to OpenAI models directly from within the chat interface, users can quickly generate responses and insights that might not have been possible otherwise.
 
-## Documentation
+## Bot usage
 This bot uses slash commands, so to use it you need to read its functionality below.
 
 ### Commands
@@ -50,3 +50,5 @@ If you want to see new commands and functions write to the discord PLATINA#0882
 ⠀⠀⠀⠀• `"regenerate response" button` - 10 seconds. <br>
 ⠀⠀⠀⠀• `command usage` - 20 seconds.
 
+## Developers
+- [PLATINA](https://github.com/PLATINA-DS)
