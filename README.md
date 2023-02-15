@@ -13,7 +13,7 @@ This is a Discord bot that can be used to create requests to one of the artifici
 ## Documentation
 This bot uses slash commands, so to use it you need to read its functionality below.
 
-## Commands
+### Commands
 • **`/ask`** <br>
 ⠀⠀Params <br>
 ⠀⠀⠀⠀• **`model`** - choose the model that will answer your request. <br>
