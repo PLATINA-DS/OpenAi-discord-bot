@@ -52,3 +52,6 @@ If you want to see new commands and functions write to the discord PLATINA#0882
 
 ## Developers
 - [PLATINA](https://github.com/PLATINA-DS)
+
+## License
+Project PLATINA-DS.OpenAi-discord-bot is distributed under the GNU license.
