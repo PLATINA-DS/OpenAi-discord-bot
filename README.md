@@ -10,6 +10,13 @@
 ## About
 This is a Discord bot that can be used to create requests to one of the artificial intelligence models developed by OpenAI and available to everyone. This is not an official OpenAI bot; it simply adds AI interaction to the Discord interface. Using a bot like this can add a new level of interactivity and engagement to a Discord server, especially for communities interested in artificial intelligence and machine learning. With the ability to make requests to OpenAI models directly from within the chat interface, users can quickly generate responses and insights that might not have been possible otherwise.
 
+## Сontacts and links
+Developer's discord <br>
+**PLATINA#0882**
+
+Add a bot to your discord server <br>
+[Invite Link](https://discord.com/api/oauth2/authorize?client_id=1070724631079702578&permissions=277025508416&scope=bot)
+
 ## Bot usage
 This bot uses slash commands, so to use it you need to read its functionality below.
 
