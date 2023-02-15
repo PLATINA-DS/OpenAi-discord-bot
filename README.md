@@ -47,7 +47,8 @@ If you want to see new commands and functions write to the discord PLATINA#0882
 ⠀⠀Description: <br>
 ⠀⠀⠀⠀A green button under each message with a reply where you can change the answer if you don't like it. <br>
 ⠀⠀Peculiar properties: <br>
-⠀⠀⠀⠀The button can only be used within 3 minutes of each press, after which it will become inactive.
+⠀⠀⠀⠀The button can only be used within 3 minutes of each press, after which it will become inactive. <br>
+⠀⠀⠀⠀The button can only be used 3 times, after which it disappears.
 
 • **`Cooldown`** <br>
 ⠀⠀Description: <br>
