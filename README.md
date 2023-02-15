@@ -15,22 +15,38 @@ This bot uses slash commands, so to use it you need to read its functionality be
 
 ### Commands
 • **`/ask`** <br>
-⠀⠀Params <br>
+⠀⠀Params: <br>
 ⠀⠀⠀⠀• **`model`** - choose the model that will answer your request. <br>
 ⠀⠀⠀⠀• **`prompt`** - enter your request. <br>
-⠀⠀Description <br>
+⠀⠀Description: <br>
 ⠀⠀⠀⠀Choose a model, ask a question, wait for an answer.
     
 • **`/help`** <br>
-⠀⠀Params <br>
+⠀⠀Params: <br>
 ⠀⠀⠀⠀`None` <br>
-⠀⠀Description <br>
+⠀⠀Description: <br>
 ⠀⠀⠀⠀Information about the bot and some models.
     
 • **`/send_example`** <br>
-⠀⠀Params <br>
+⠀⠀Params: <br>
 ⠀⠀⠀⠀`None`<br>
-⠀⠀Description <br>
+⠀⠀Description: <br>
 ⠀⠀⠀⠀Look at the example from the video how to use the bot. <br>
 
 If you want to see new commands and functions write to the discord PLATINA#0882
+
+### Things
+• **`"Regenerate response" button`** <br>
+⠀⠀Description: <br>
+⠀⠀⠀⠀A green button under each message with a reply where you can change the answer if you don't like it. <br>
+⠀⠀Peculiar properties: <br>
+⠀⠀⠀⠀The button can only be used within 3 minutes of each press, after which it will become inactive.
+
+• **`Cooldown`** <br>
+⠀⠀Description: <br>
+⠀⠀⠀⠀Interactions with the bot can only be performed once within a certain period of time. <br>
+⠀⠀Peculiar properties: <br>
+⠀⠀⠀⠀Below are listed the cooldowns for interactions <br>
+⠀⠀⠀⠀• `"regenerate response" button` - 10 seconds. <br>
+⠀⠀⠀⠀• `command usage` - 20 seconds.
+
