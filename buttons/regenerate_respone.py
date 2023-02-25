@@ -18,7 +18,7 @@ class RegenerateButton(ui.View):
         self._button_usages = 0
 
     @ui.button(label="Regenerate response", style=discord.ButtonStyle.green)
-    async def regenerate(self, interaction: discord.Interaction, _):
+    async def regenerate(self, interaction: discord.Interaction, *args):
         bucket = self._cooldown.get_bucket(interaction.message)
         retry_after = bucket.update_rate_limit()
         regenerate_embed = discord.Embed(description="Response regeneration...",
@@ -39,7 +39,8 @@ class RegenerateButton(ui.View):
                 description=f"You will be able to use the button again after **{round(retry_after, 1)}** seconds",
                 color=embed_color
             )
-            return await interaction.response.send_message(embed=embed, ephemeral=True)
+            await interaction.response.send_message(embed=embed, ephemeral=True)
+            return 
 
         if self._button_usages >= 3:
             await interaction.message.edit(view=None)
