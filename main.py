@@ -26,6 +26,14 @@ class Client(commands.Bot):
         await self.change_presence(activity=discord.Game(name=f"Responsible for {len(self.guilds)} guilds."),
                                    status=discord.Status.idle)
         print("connected")
+        
+    async def on_guild_join(self, *args):
+        await self.change_presence(activity=discord.Game(name=f"Responsible for {len(self.guilds)} guilds."),
+                                   status=discord.Status.idle)
+
+    async def on_guild_remove(self, *args):
+        await self.change_presence(activity=discord.Game(name=f"Responsible for {len(self.guilds)} guilds."),
+                                   status=discord.Status.idle)
 
 
 client = Client()
