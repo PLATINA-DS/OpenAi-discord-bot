@@ -2,7 +2,7 @@ import discord
 from discord import ui
 from discord.ext import commands
 
-from response_generator.generator import generator
+from response_generator.generator import generated_embed
 from settings import embed_color
 
 
@@ -40,7 +40,7 @@ class RegenerateButton(ui.View):
                 color=embed_color
             )
             await interaction.response.send_message(embed=embed, ephemeral=True)
-            return 
+            return
 
         if self._button_usages >= 3:
             await interaction.message.edit(view=None)
@@ -49,6 +49,7 @@ class RegenerateButton(ui.View):
 
         await interaction.message.edit(embed=regenerate_embed, view=None)
         await interaction.response.defer()
-        response_embed = await generator(self.model, self.deco_model_name, self.prompt)
+        response_embed = await generated_embed(self.model, self.deco_model_name, self.prompt)
         await interaction.edit_original_response(embed=response_embed, view=self)
         self._button_usages += 1
+        
