@@ -1,4 +1,4 @@
-info = "This bot generates the answer to your questions using the OpenAi library. " \
+info = "This bot generates the answer to your questions using the OpenAi API. " \
         "All commands use a set of **GPT-3** models that can understand and generate natural language. " \
         "At the moment, the most effective GPT-3 model is `text-davinci-003`, which you can use " \
         "with the `/ask` command. " \
