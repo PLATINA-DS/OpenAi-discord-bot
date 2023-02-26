@@ -1,13 +1,9 @@
 import discord
-import openai
 from discord import app_commands
 from discord.ext import commands
 import asyncio
 
-from settings import BOT_TOKEN, OPENAI_API_KEY, embed_color
-
-
-openai.api_key = OPENAI_API_KEY
+from settings import BOT_TOKEN, embed_color
 
 
 class Client(commands.Bot):
@@ -22,13 +18,13 @@ class Client(commands.Bot):
         await self.load_extension("commands.ask_command")
         await self.load_extension("commands.help_command")
         await self.load_extension("commands.send_example")
+        await self.load_extension("commands.generate_image")
 
         await self.tree.sync(guild=None)
 
     async def on_ready(self):
-        await self.change_presence(activity=discord.Game(name="https://github.com/PLATINA-DS/OpenAi-discord-bot"),
+        await self.change_presence(activity=discord.Game(name=f"Responsible for {len(self.guilds)} guilds."),
                                    status=discord.Status.idle)
-
         print("connected")
 
 
