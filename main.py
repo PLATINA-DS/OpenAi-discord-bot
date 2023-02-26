@@ -23,17 +23,33 @@ class Client(commands.Bot):
         await self.tree.sync(guild=None)
 
     async def on_ready(self):
-        await self.change_presence(activity=discord.Game(name=f"Responsible for {len(self.guilds)} guilds."),
-                                   status=discord.Status.idle)
-        print("connected")
+        guilds_count = len(self.guilds)
+        users_count = len(set(self.get_all_members()))
+
+        await self.change_presence(activity=discord.Game(
+            name=f"Responsible for {guilds_count} guilds with "
+                 f"{users_count} users"),
+            status=discord.Status.idle)
         
+        print("connected")
+
     async def on_guild_join(self, *args):
-        await self.change_presence(activity=discord.Game(name=f"Responsible for {len(self.guilds)} guilds."),
-                                   status=discord.Status.idle)
+        guilds_count = len(self.guilds)
+        users_count = len(set(self.get_all_members()))
+
+        await self.change_presence(activity=discord.Game(
+            name=f"Responsible for {guilds_count} guilds with "
+                 f"{users_count} users"),
+            status=discord.Status.idle)
 
     async def on_guild_remove(self, *args):
-        await self.change_presence(activity=discord.Game(name=f"Responsible for {len(self.guilds)} guilds."),
-                                   status=discord.Status.idle)
+        guilds_count = len(self.guilds)
+        users_count = len(set(self.get_all_members()))
+
+        await self.change_presence(activity=discord.Game(
+            name=f"Responsible for {guilds_count} guilds with "
+                 f"{users_count} users"),
+            status=discord.Status.idle)
 
 
 client = Client()
