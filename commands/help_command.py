@@ -27,6 +27,8 @@ class HelpCommand(commands.Cog):
         embed.add_field(name="How to use?",
                         value=tutorial,
                         inline=False)
+        embed.add_field(name="About image generation",
+                        value=about_image_commands, inline=False)
 
         await interaction.response.send_message(embed=embed)
 
