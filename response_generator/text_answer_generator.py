@@ -5,7 +5,7 @@ import aiohttp
 from settings import embed_color, OPENAI_API_KEY
 
 
-async def __request_to_openai(model: str, prompt: str) -> tuple[str, float]:
+async def __request_to_openai(model: str, prompt: str) -> tuple[str, int]:
     start = time()
 
     async with aiohttp.ClientSession() as session:
