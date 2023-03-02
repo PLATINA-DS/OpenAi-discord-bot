@@ -18,14 +18,38 @@ class Client(commands.Bot):
         await self.load_extension("commands.ask_command")
         await self.load_extension("commands.help_command")
         await self.load_extension("commands.send_example")
-        await self.load_extension("commands.generate_image")
+        await self.load_extension("commands.generate_image_file")
+        await self.load_extension("commands.generate_image_link")
 
         await self.tree.sync(guild=None)
 
     async def on_ready(self):
-        await self.change_presence(activity=discord.Game(name=f"Responsible for {len(self.guilds)} guilds."),
-                                   status=discord.Status.idle)
+        guilds_count = len(self.guilds)
+        users_count = len(set(self.get_all_members()))
+
+        await self.change_presence(activity=discord.Game(
+            name=f"Responsible for {guilds_count} guilds with "
+                 f"{users_count} users"),
+            status=discord.Status.idle)
         print("connected")
+
+    async def on_guild_join(self, *agrs):
+        guilds_count = len(self.guilds)
+        users_count = len(set(self.get_all_members()))
+
+        await self.change_presence(activity=discord.Game(
+            name=f"Responsible for {guilds_count} guilds with "
+                 f"{users_count} users"),
+            status=discord.Status.idle)
+
+    async def on_guild_remove(self, *args):
+        guilds_count = len(self.guilds)
+        users_count = len(set(self.get_all_members()))
+
+        await self.change_presence(activity=discord.Game(
+            name=f"Responsible for {guilds_count} guilds with "
+                 f"{users_count} users"),
+            status=discord.Status.idle)
 
 
 client = Client()
