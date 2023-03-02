@@ -5,7 +5,9 @@ import aiohttp
 from settings import embed_color, OPENAI_API_KEY
 
 
-async def generate(model: str, prompt: str) -> str:
+async def __request_to_openai(model: str, prompt: str) -> tuple[str, float]:
+    start = time()
+
     async with aiohttp.ClientSession() as session:
         headers = {
             'Content-Type': 'application/json',
@@ -24,20 +26,14 @@ async def generate(model: str, prompt: str) -> str:
 
     answer = f"{response_text[:1021]}..." if len(response_text) > 1024 else response_text
 
-    return answer
-
-
-async def timer(model: str, prompt: str) -> int and str:
-    start = time()
-    answer = await generate(model, prompt)
     end = time()
-    result = int(end - start)
+    request_execution_time = end-start
 
-    return result, answer
+    return answer, request_execution_time
 
 
-async def generated_embed(model: str, deco_model_name: str, prompt: str) -> discord.Embed:
-    generation_time, answer = await timer(model, prompt)
+async def generate_answer_embed(model: str, deco_model_name: str, prompt: str) -> discord.Embed:
+    answer, request_execution_time = await __request_to_openai(model, prompt)
     embed = discord.Embed(
         title="Result",
         color=embed_color
@@ -45,6 +41,6 @@ async def generated_embed(model: str, deco_model_name: str, prompt: str) -> disc
     embed.set_author(name=f"Model - {deco_model_name}")
     embed.add_field(name="Question", value=prompt, inline=False)
     embed.add_field(name="Answer", value=answer, inline=False)
-    embed.set_footer(text=f"Generation time - {generation_time}s")
+    embed.set_footer(text=f"Generation time - {request_execution_time}s")
 
     return embed
