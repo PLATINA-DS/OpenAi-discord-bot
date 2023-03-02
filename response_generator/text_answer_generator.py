@@ -27,7 +27,7 @@ async def __request_to_openai(model: str, prompt: str) -> tuple[str, float]:
     answer = f"{response_text[:1021]}..." if len(response_text) > 1024 else response_text
 
     end = time()
-    request_execution_time = end-start
+    request_execution_time = round(end-start)
 
     return answer, request_execution_time
 
