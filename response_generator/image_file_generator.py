@@ -7,7 +7,7 @@ from settings import embed_color, OPENAI_API_KEY
 
 
 class OpenAIResponse:
-    def __init__(self, execution_time: float, image_url: str):
+    def __init__(self, execution_time: int, image_url: str):
         self.execution_time = execution_time
         self.image_url = image_url
 
