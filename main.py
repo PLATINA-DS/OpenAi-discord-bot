@@ -33,7 +33,7 @@ class Client(commands.Bot):
             status=discord.Status.idle)
         print("connected")
 
-    async def on_guild_join(self, *agrs):
+    async def on_guild_join(self, *args):
         guilds_count = len(self.guilds)
         users_count = len(set(self.get_all_members()))
 
