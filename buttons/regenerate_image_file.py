@@ -2,7 +2,7 @@ import discord
 from discord import ui
 from discord.ext import commands
 
-from response_generator.image_generator import generated_embed
+from response_generator.image_file_generator import generate_answer_embed
 from settings import embed_color
 
 
@@ -44,9 +44,9 @@ class RegenerateImageButton(ui.View):
             await interaction.message.edit(view=None)
             await interaction.response.send_message(embed=not_available_embed, ephemeral=True)
             return
-
-        await interaction.message.edit(embed=regenerate_embed, view=None)
+        await interaction.message.edit(embed=regenerate_embed, view=None, attachments=[])
         await interaction.response.defer()
-        response_embed = await generated_embed(self.prompt)
-        await interaction.edit_original_response(embed=response_embed, view=self)
+        embed, file = await generate_answer_embed(self.prompt)
+        await interaction.edit_original_response(embed=embed, attachments=[file], view=self)
+
         self._button_usages += 1
